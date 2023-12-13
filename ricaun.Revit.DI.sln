@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{1259B964-DB6A-4A8A-8DF0-42955984F1C2}") = "ricaun.Revit.DI", "ricaun.Revit.DI\ricaun.Revit.DI.csproj", "{DA9266B6-4DF2-40E0-90AE-AEFFC952D127}"
+EndProject
+Project("{1259B964-DB6A-4A8A-8DF0-42955984F1C2}") = "Build", "Build\Build.csproj", "{E6476217-DF28-4466-9515-B9C90C1515A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{FF6D9868-D208-4931-95BA-3EECCCA3AE31}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA9266B6-4DF2-40E0-90AE-AEFFC952D127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA9266B6-4DF2-40E0-90AE-AEFFC952D127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA9266B6-4DF2-40E0-90AE-AEFFC952D127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA9266B6-4DF2-40E0-90AE-AEFFC952D127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6476217-DF28-4466-9515-B9C90C1515A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6476217-DF28-4466-9515-B9C90C1515A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
