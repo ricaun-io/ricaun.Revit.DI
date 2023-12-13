@@ -48,7 +48,7 @@
 
   <PropertyGroup>
     <PackageId>ricaun.Revit.DI</PackageId>
-    <Version>1.0.0-alpha.4</Version>
+    <Version>1.0.0-alpha.5</Version>
     <ProjectGuid>{DA9266B6-4DF2-40E0-90AE-AEFFC952D127}</ProjectGuid>
   </PropertyGroup>
 

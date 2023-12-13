@@ -23,6 +23,10 @@ jobs:
         run: ./build/build.cmd --root ./build
         env:
           GitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          
+          NugetApiUrl: ${{ secrets.NUGET_API_URL }}
+          NugetApiKey: ${{ secrets.NUGET_API_KEY }}
+
           SignFile: ${{ secrets.SIGN_FILE }}
           SignPassword: ${{ secrets.SIGN_PASSWORD }}
           InstallationFiles: ${{ secrets.INSTALLATION_FILES }}
