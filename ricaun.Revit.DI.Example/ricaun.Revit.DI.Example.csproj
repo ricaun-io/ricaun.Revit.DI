@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseWPF>true</UseWPF>
+    <LangVersion>latest</LangVersion>
+    <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <Configurations>Debug; Release</Configurations>
+  </PropertyGroup>
+
+  <!-- RevitVersion -->
+  <PropertyGroup>
+    <TargetFrameworks>net46;net7.0-windows</TargetFrameworks>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="$(TargetFramework.StartsWith('net4'))">
+      <PropertyGroup>
+        <RevitVersion>2017</RevitVersion>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <RevitVersion>2025</RevitVersion>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
+  <!-- Release -->
+  <PropertyGroup Condition="!$(Configuration.Contains('Debug'))">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\$(RevitVersion)</OutputPath>
+    <DefineConstants>REVIT$(RevitVersion)</DefineConstants>
+    <NoWarn>MSB3052</NoWarn>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+
+  <!-- Debug -->
+  <PropertyGroup Condition="$(Configuration.Contains('Debug'))">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;REVIT$(RevitVersion)</DefineConstants>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+
+  <!-- DebugRevitVersion -->
+  <PropertyGroup Condition="$(Configuration.Contains('Debug'))">
+    <DebugRevitVersion>$(RevitVersion)</DebugRevitVersion>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files\Autodesk\Revit $(DebugRevitVersion)\Revit.exe</StartProgram>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>ricaun.Revit.DI.Example</PackageId>
+    <Version>1.0.0</Version>
+    <ProjectGuid>{6b668f60-80f8-4f10-821d-e44a3c880b4a}</ProjectGuid>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageAssemblyVersion></PackageAssemblyVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(Configuration.Contains('Debug'))">
+    <IncludePackageReferencesDuringMarkupCompilation>false</IncludePackageReferencesDuringMarkupCompilation>
+    <Revision>$([MSBuild]::Divide($([System.DateTime]::Now.TimeOfDay.TotalSeconds), 4).ToString('F0'))</Revision>
+    <PackageAssemblyVersion>.Dev.$(Version).$(Revision)</PackageAssemblyVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Company>Company</Company>
+    <Authors>Authors</Authors>
+    <Description>Revit Add-In Description for $(PackageId).</Description>
+    <CopyrightYears>$([System.DateTime]::Now.ToString('yyyy'))</CopyrightYears>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyName>$(PackageId)$(PackageAssemblyVersion)</AssemblyName>
+    <Product>$(PackageId)</Product>
+    <Copyright>Copyright © $(CopyrightYears) $(Company)</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ricaun.Revit.UI" Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Revit\App.cs" />
+    <None Include="Revit\Commands\Command.cs" />
+  </ItemGroup>
+
+  <!-- Fody -->
+  <ItemGroup>
+    <PackageReference Include="PropertyChanged.Fody" Version="3.*" IncludeAssets="build; compile" PrivateAssets="All" />
+  </ItemGroup>
+  <PropertyGroup>
+    <WeaverConfiguration>
+      <Weavers>
+        <PropertyChanged />
+      </Weavers>
+    </WeaverConfiguration>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Revit_All_Main_Versions_API_x64" Version="$(RevitVersion).*-*" IncludeAssets="build; compile" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ricaun.Revit.DI\ricaun.Revit.DI.csproj" />
+  </ItemGroup>
+
+</Project>

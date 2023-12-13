@@ -8,7 +8,7 @@ namespace ricaun.Revit.DI.Extensions
     /// <summary>
     /// UIControlledApplicationExtension
     /// </summary>
-    internal static class UIControlledApplicationExtension
+    public static class UIControlledApplicationExtension
     {
         /// <summary>
         /// Get <see cref="Autodesk.Revit.UI.UIApplication"/> using the <paramref name="application"/>

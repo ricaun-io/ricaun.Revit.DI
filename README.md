@@ -40,7 +40,6 @@ ControlledApplication application;
 container.AddRevitSingleton(application);
 ```
 
-
 ## ricaun.Revit.DI.Example
 
 The project [ricaun.Revit.DI.Example](ricaun.Revit.DI.Example) provide an example of how to use the [ricaun.Revit.DI](https://github.com/ricaun-io/ricaun.Revit.DI) package.

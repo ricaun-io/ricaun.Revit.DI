@@ -8,7 +8,7 @@ namespace ricaun.Revit.DI.Extensions
     /// <summary>
     /// ControlledApplicationExtension
     /// </summary>
-    internal static class ControlledApplicationExtension
+    public static class ControlledApplicationExtension
     {
         /// <summary>
         /// Get <see cref="Autodesk.Revit.ApplicationServices.Application"/> using the <paramref name="application"/>
