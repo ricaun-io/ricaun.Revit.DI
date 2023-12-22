@@ -116,7 +116,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ricaun.DI" Version="*-*" />
+    <PackageReference Include="ricaun.DI" Version="*" />
   </ItemGroup>
 
   <ItemGroup>
