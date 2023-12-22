@@ -28,7 +28,7 @@ namespace ricaun.Revit.DI.Extensions
         /// Get <see cref="Autodesk.Revit.UI.UIControlledApplication"/> using the <paramref name="application"/>
         /// </summary>
         /// <param name="application">Revit UIControlledApplication</param>
-        public static UIControlledApplication GetControlledApplication(this UIApplication application)
+        public static UIControlledApplication GetUIControlledApplication(this UIApplication application)
         {
             var type = typeof(UIControlledApplication);
 

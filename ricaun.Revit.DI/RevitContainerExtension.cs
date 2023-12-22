@@ -18,7 +18,7 @@ namespace ricaun.Revit.DI
         public static void AddRevitSingleton(this IContainer container, UIApplication application)
         {
             container.AddSingleton(application);
-            container.AddSingleton(application.GetControlledApplication());
+            container.AddSingleton(application.GetUIControlledApplication());
             container.AddRevitSingleton(application.Application);
         }
 
